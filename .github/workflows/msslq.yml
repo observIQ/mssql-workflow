@@ -1,0 +1,14 @@
+# Testing build for installing IIS on Windows Server 2019
+
+name: build-iis-test
+on:
+  pull_request:
+
+jobs:
+  build_windows:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: install iis
+        run: PowerShell.exe -File install.ps1
